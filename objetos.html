@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Jquery</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var Cat = new cat('Katu');
+			var Cat2 = new cat('Gere')
+
+			function cat(name){
+				this.name = name;
+				this.sound = function(){
+					console.log(this.name + ': miaaau');
+				};
+			}
+			console.log('El gato se llama: '+Cat.name);
+			console.log('El otro gato se llama: '+Cat2.name);
+			Cat.sound();
+		</script>
+	</body>
+</html>
