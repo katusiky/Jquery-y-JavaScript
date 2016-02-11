@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang='es'>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript"></script>
+		<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script>
+		$(document).on('ready',function(){
+			/*
+			$('#test').attr('class',function(){
+				var string = 'Hola_Mundo';
+				return string;
+			});
+
+			//$('#test').removeAttr('class');
+
+			var clase= $('#test').attr('class');
+			alert(clase);
+			*/
+
+			$('a').on('click',function(e){
+				e.preventDefault();
+				var link = $(this).attr('href');
+				alert('Usted está saliendo de nuestro sitio');
+				location.href = link;
+			});
+		});
+		</script>
+	</head>
+	<body>
+	<div id="test" class="testClass"></div>
+	<a href="http://codigofacilito.com">Codigo Facilito</a>
+	<form>
+		<input type="">
+		<input type="submit">
+	</form>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript"></script>
+		<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script>
+		$(document).on('ready',function(){
+			//var next = $('#first').next().text();// next Selecciona el siguiente inmediato
+			// var parent = $('#test').parent().text();// parent Selecciona al padre
+			// var children = $('#father').children().attr('id');// children Selecciona al hijo (devuelve array)
+			// var siblings = $('#first').siblings();// siblings Selecciona los hermanos (devuelve array)
+			var each = $('ul li').each(function(index,element){
+				console.log('El elemento numero: '+(index+1)+'. Contiene este texto: '+ $(element).text());
+			}).text();// each Selecciona cada Elemento
+			//console.log(each);
+		});
+		</script>
+	</head>
+	<body>
+		<div>
+			<article id="father">
+				Hey!! :D
+				<div id="test">Soy el Hijo</div>
+			</article>
+		</div>
+		<ul>
+			<li id="first">Soy el primero</li>
+			<li>Soy el que sigue</li>
+			<li>Soy el número tres</li>
+		</ul>
+	</body>
+</html>

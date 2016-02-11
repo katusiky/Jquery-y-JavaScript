@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript"></script>
+		<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script>
+		$(document).on('ready',function(){
+
+			$('button').on('click',function(){
+				var array = [1,2,3,4,5,'José']
+
+				var string = '                                   hola                       mun                   do                      ';
+				console.log($.trim(string)); // trim Elimina los espacios en blancos al principio y al final
+			/*
+				if($.inArray(4,array) !== -1) // inArray Busca un dato en el array y devuelve el indice
+				console.log(array[$.inArray(4,array)]);
+			*/
+			/*
+				$.each(array,function(i,e){ // each Recorre cada elemento del arreglo 
+
+					if(array[i] == 4)
+						return true;
+
+					console.log('Elemento: '+ (i+1) + '. Vale: '+ e);
+				});
+			*/
+			});
+		});
+		</script>
+		<style>
+			body,html{
+				background: #000;
+				color: #000;
+				margin: 0;
+				padding: 0;
+			}
+			header{
+				display: block;
+				margin: 0 auto 50px auto;
+				width: 365px;
+			}
+			button{
+				display: block;
+				margin: 0 auto;
+				width: 80px;
+			}
+			div{
+				background: #FFF;
+				height: 50px;
+				display: block;
+				width: 400px;
+				margin: 2px auto;
+			}
+		</style>
+	</head>
+	<body>
+
+		<header>
+			<img src="../googlelogo_color_272x92dp.png">
+		</header>
+
+		<button id='test'>Ejecutar</button>
+
+		<div id="e1">
+			Métodos Utilitarios
+		</div>
+	</body>
+</html>

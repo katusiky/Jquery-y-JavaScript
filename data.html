@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript"></script>
+		<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script> // data Se usa para asignar información importante al elemento (por ejemplo su posición)
+		$(document).on('ready',function(){
+			$('ul li').each(function(index,element){
+				$.data(element,'position',index);
+			});
+			$('ul li').each(function(index,element){
+				console.log($.data(element,'position'));
+			});
+		});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>Uno</li>
+			<li>Dos</li>
+			<li>Tres</li>
+		</ul>
+	</body>
+</html>

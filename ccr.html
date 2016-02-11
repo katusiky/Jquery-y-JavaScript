@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript"></script>
+		<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script>
+		$(document).on('ready',function(){
+			$('button').on('click',function(){
+				//$('ol li:first').appendTo('ol:first'); // appendTo Al final de
+				//$('ol:first').append($('ol li:first'));
+				//$('ol li:last').prependTo('ol:first'); // prependTo Al principio de 
+				//$('ol:first').prepend($('ol li:last'));
+				//$('ol li:first').insertAfter('#e1'); // insertAfter Agregar después de
+				//$('#e1').after($('ol li:first'))
+				//$('ol li:first').insertBefore('#e1'); // insertBefore Agregar antes de
+				//$('#e1').before($('ol li:first'));
+				//var clon = $('ol li:first').clone(); // clone Clonar elemento
+				//var new_e = $('<h1>Hola Mundo!</h1>')
+				$('ol li:last').remove(); // remove Quitar elemento
+			});
+		});
+		</script>
+
+		<style>
+		
+			body,html{
+				background: #000;
+				color: #FFF;
+				margin: 0;
+				padding: 0;
+			}
+			header{
+				display: block;
+				margin: 0 auto 50px auto;
+				width: 365px;
+			}
+			ol{
+				display: block;
+				width: 500px;
+				margin: 0 auto;
+			}
+			ol li{
+				background: #088A29;
+				margin: 5px auto;
+				height: 30px;
+				width: 100%;
+			}
+			button{
+				display: block;
+				margin: 0 auto;
+				width: 80px;
+			}
+			div{
+				background: #FE2E64;
+				height: 50px;
+				display: block;
+				width: 400px;
+				margin: 2px auto;
+			}
+		</style>
+	</head>
+	<body>
+
+	<header>
+		<img src="../googlelogo_color_272x92dp.png" alt="">
+	</header>
+
+	<ol>
+		<li>Elemento 1</li>
+		<li>Elemento 2</li>
+		<li>Elemento 3</li>
+		<li>Elemento 4</li>
+	</ol>
+
+	<button id="test">Ejecutar</button>
+
+	<div id="e1">
+		<p>Div	1</p>
+	</div>
+
+	<div id="e2">
+		<p>Div 2</p>
+	</div>
+	</body>
+</html>
