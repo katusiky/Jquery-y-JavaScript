@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Controlar Efectos</title>
+		<script src="jquery-2.2.0.min.js"></script>
+		<script src="jquery.color-animation.js"></script> 
+		<script>
+		$(document).on('ready',function(){
+
+			//$.fx.off = true // desactiva las animaciones pero ejecuta los cambios asignados a las mismas. Y además no toma en cuenta los plugins de color.
+			/*
+			var timeOut = setTimeout('stopAnim()', 1250) // '.setTimeout' dice cuanto va a tardar en ejecutarse la función que se coloque como primer parametro, dándole el segundo parámetro como timepo.
+			*/
+			$('#box1').animate({
+				marginBottom: 0,
+			}, 2500, function () {
+				$('#box1').animate({
+					backgroundColor: 'red',
+					marginTop: -100,
+					opacity: 0.5
+				});
+			})/*.delay(1000).slideUp()*/; // '.delay' se detiene un tiempo o tarda un tiempo en continuar con el resto de código.
+
+			//$('#box1').slideUp().delay(1000).slideDown() // '.delay' se detiene un tiempo o tarda un tiempo en continuar con el resto de código.
+		});
+		function stopAnim() {
+			$('#box1').stop() // '.stop' detiene absolumante el efecto en su totalidad.
+		}
+		</script>
+		<style>
+		body,html{
+			padding: 100px;
+
+		}
+		div{
+			display: block;
+			height: 100px;
+			margin: 0 auto;
+			width: 400px;
+		}
+		#box1{
+			background: #0080FF;
+			margin-bottom: 100px;
+		}
+		#box2{
+			background: #970707;
+		}
+		</style>
+	</head>
+	<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	</body>
+</html>

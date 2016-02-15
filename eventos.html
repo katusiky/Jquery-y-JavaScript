@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript"></script>
+		<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script> 
+		$(document).on('ready',function () {
+			$('a').on('click', function (e) {
+				e.preventDefault(); // Se olvida de lo que hace el 'a' y hace lo que yo le digo que haga
+				console.log(e.pageX); // indica la posción X
+				console.log($(this).attr('id'));
+			});
+		});
+		</script>
+	</head>
+	<body>
+	<a href="http://www.codigofacilito.com" id="event">Hola</a>
+	<a href="http://www.google.com" id="eventTwo">Hola Dos</a>
+	</body>
+</html>

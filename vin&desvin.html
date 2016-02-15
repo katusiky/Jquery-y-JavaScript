@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript"></script>
+		<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script>
+		var colorB, v = 0;
+		$(document).on('ready',function(){
+
+
+
+
+			$('#box').on('mouseover', function () {
+				colorB = $(this).css('background');
+				$(this).css('background','red');
+			});
+			$('#box').one('mouseout', function () { // '.one' asigna un evento que se ejecutara una sola vez.
+				$(this).css('background', colorB);
+			});
+
+
+
+
+
+
+			/*
+			*/
+
+
+			/*
+			var f1 = function () {console.log('Mouse IN')},
+					f2 = function () {
+					v++; 
+				colorB = $(this).css('background'); 
+				$(this).css('background','red');
+				};
+							// guardando funciones en variables
+
+			$('#box').on({
+
+				// asignando un conjunto de eventos con '.on'
+				'mouseover': f2,
+				'mouseout':function () {
+					$(this).css('background', colorB);
+
+					// desvinculando eventos
+					if (v >= 3){  
+						$('#box').off('mouseover',f2)
+					}
+				}
+			});
+				//$('#box').on('mouseover', function () {console.log('Mouse IN')});		
+				$('#box').on('mouseover', f1);	
+			*/	
+			/*
+			$('#box').mouseover(function () {
+				colorB = $(this).css('background');
+				$(this).css('background','red');
+			});
+			$('#box').mouseout(function () {
+				$(this).css('background', colorB);
+			});
+			*/
+		});
+		</script>
+		<style>
+		div{
+			background: #0080FF;
+			display: block;
+			height: 100px;
+			margin: 20px auto;
+			width: 400px;
+			}
+		</style>
+	</head>
+	<body>
+	<div id="box"></div>
+	</body>
+</html>

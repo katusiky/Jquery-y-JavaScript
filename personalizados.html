@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Eventos Personalizados</title>
+		<script type="text/javascript"></script>
+		<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script>
+		$(document).on('ready',function () {
+			$("#myInput").on('changed',function (event, id) { // event es el parametro para obtener el Objeto Evento.
+				console.log(id)
+				if(this.checked){  // si checked (cuadricula con el check) remuevele el estado y cambia el texto a 'Encender'
+					$('#myInput').removeAttr('checked');
+					$(".change").text('Encender');
+				}else{
+					$('#myInput').prop('checked', true); // si el checked no esta activado asignale un estado de activación y el texto Apagado
+					$('.change').text('Apagar');
+				}
+			});
+			$('.change').on('click',function () {
+				$('#myInput').trigger('changed', [$(this).attr('id')]); // trigger para llamar a nuestro evento pasandole el nombre de nuestro evento.
+			});
+		});
+		</script>
+	</head>
+	<body>
+		<input type="checkbox" id="myInput" checked="checked">
+		<button class="change" id="1">Apagar</button>
+		<button class="change" id="2">Apagar</button>
+	</body>
+</html>

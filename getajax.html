@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Get AJAX</title>
+		<script src="jquery-2.2.0.min.js"></script>
+		<script>
+		$(document).on('ready',function(e){
+			e.preventDefault
+			$.get('hola.html',function (data){
+				//$('#receptor').html(data)
+				console.log(data)
+			});
+		});
+		</script>
+	</head>
+	<body>
+		<div id="receptor"></div>
+	</body>
+</html>
