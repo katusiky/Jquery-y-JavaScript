@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>GET</title>
+		<title>GetJSON</title>
 		<script src="jquery-2.2.0.min.js"></script>
 		<script src="jquery.color-animation.js"></script>
 		<script src="jquery.spin.js"></script>
@@ -13,10 +13,17 @@
 			var	met = $('#main form').attr('method');
 
 			$('#main form').on('submit', function (e){
-				
-				e.preventDefault();
 
+				e.preventDefault();
 				var info = $('#main form').serialize();
+
+				$.getJSON('https://api.twitter.com/1.1/search/tweets.json', {
+					q: @noradio
+				}, function(resp){
+					$.each(resp, function(key, value){ // key y value son los parámetros que recibe la función.
+						console.log(c + ' => ' + k)
+					});
+				});
 			});
 		});
 		</script>
