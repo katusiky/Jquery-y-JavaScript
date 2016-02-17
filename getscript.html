@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>GetScript</title>
+		<script src="jquery-2.2.0.min.js"></script>
+		<script>
+		$(document).on('ready',function(){
+			$.getScript('http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js', function(){ // Primer parámetro es el archivo del cual le vamos a sacar los scripts y el segundo parámetro es la función que se va a ejecutar cuando la peticón sea succes.
+				$('#box1').slideUp(3000, 'easeOutBounce');
+			});
+		});
+		</script>
+		<style>
+		div{
+			display: block;
+			height: 200px;
+			margin: 0 auto;
+			width: 400px;
+		}
+		#box1{
+			background: #0080FF;
+			margin-bottom: 100px;
+		}
+		</style>
+	</head>
+	<body>
+	<div id="box1"></div>
+	</body>
+</html>

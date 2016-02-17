@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>GET</title>
+		<script src="jquery-2.2.0.min.js"></script>
+		<script src="jquery.color-animation.js"></script>
+		<script src="jquery.spin.js"></script>
+		<script>
+		$(document).on('ready',function(){
+			var pet = $('#main form').attr('action');
+			var	met = $('#main form').attr('method');
+			//var	nom,m,msj;
+			$('#main form').on('submit', function (e){
+				e.preventDefault();
+				$.ajax({
+					beforeSend: function (){
+						$('#status').spin({radius:3,width:2,height:2,length:4});
+						//nom = document.fo.name.value;
+						//m= document.fo.mail.value;
+						//msj = document.fo.mensaje.value;
+					},
+					url: pet,
+					type: met,
+					//data: {name:nom,mail:m,mensaje:msj}, // declarando el objeto json a mano.
+					data:$('#main form').serialize(), // '.serialize' transforma a json por mí.
+					success: function (resp) {
+						if(resp == 'Correcto')
+							$('#status').html('<img src="google.png">')
+						else{
+							$('#status').html('<img src="google.png">')
+							console.log(resp)
+						}
+					},
+					error: function (jqXHR,state,error){
+						$('#status').html('<img src="google.png">')
+						console.log(state)
+						console.log(error)
+					},
+					complete: function (jqXHR,state){
+						console.log(state)
+					},
+					timeout: 10000
+				});
+			});
+		});
+		</script>
+		<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body,html{
+			font-family: Myriad Pro, Arial;
+			background: #D65E5E;
+			color: #FFF;
+		}
+		#main h1{
+			display: block;
+			margin: 0 auto;
+			margin: 400px;
+		}
+		::selection{
+			background: #e04c22;
+			color: #FFF;
+		}
+		form{
+			display: block;
+			width: 100%;
+		}
+		input,textarea{
+			font-family: Myriad Pro,Arial;
+			color: #FFF;
+			border: 0;
+			outline: 0;
+			background: #1f61ad;
+			border-radius: 1px;
+			font-size: 20px;
+			margin: 10px auto;
+			width: 95%;
+			display: block;
+			max-height: 100px;
+		}
+		textarea{
+			max-width: 95%;
+			height: 100px;
+		}
+		input[type=submit]{
+			display: inline-block;
+			vertical-align: middle;
+			height: 25px;
+			width: 80%;
+			cursor: pointer;
+		}
+		#status{
+			display: inline-block;
+			vertical-align: middle;
+			width: 20px;
+			height: 20px;
+		}
+		#status img{
+			width: 20px;
+			height: 20px;
+		}
+		</style>
+	</head>
+	<body>
+	<div id="main">
+		<h1 style="text-align:center;margin:0;">Formulario de Contacto</h1>
+		<form action="peticion.php" name="fo" method="POST">
+			<input type="text" name="name" placeholder="Nombre..."/>
+			<input type="mail" name="mail" placeholder="Correo Electrónico..."/>
+			<textarea name="mensaje" placeholder="Mensaje..."></textarea>
+			<div style="display:block;width:60%;margin:0 auto;">
+				<input type="submit" name="send" value="Enviar"/>
+				<div id="status"></div>
+			</div>
+		</form>
+	</div>
+	</body>
+</html>
